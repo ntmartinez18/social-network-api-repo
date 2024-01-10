@@ -16,11 +16,11 @@ const userSchema = new Schema(
       match: '/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/,'
     },
     thoughts: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Thought',
     }],
     friends: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User',
       }],
     });
@@ -28,6 +28,6 @@ const userSchema = new Schema(
         return this.friends.length;
       });
 
-const User = model('User', userSchema);
+const User = model('user', userSchema);
 
 module.exports = User;

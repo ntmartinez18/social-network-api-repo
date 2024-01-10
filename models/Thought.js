@@ -19,7 +19,7 @@ const thoughtSchema = new Schema(
         type: String,
         required: true,
       },
-      reactions: [reactionSchema], // Assuming you have defined the `reactionSchema`
+      reactions: [reactionSchema],
     }, {
       toJSON: { virtuals: true },
       id: false,
@@ -28,6 +28,6 @@ const thoughtSchema = new Schema(
         return this.reactions.length;
       });
       
-      const Thought = mongoose.model('Thought', thoughtSchema);
+      const Thought = mongoose.model('thought', thoughtSchema);
       
       module.exports = Thought;
